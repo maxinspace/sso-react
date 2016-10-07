@@ -1,4 +1,4 @@
-# Skeleton for React based application
+# React-based Single-sign-on application
 
 [![Build Status](https://travis-ci.org/fs/react-base.svg?branch=master)](https://travis-ci.org/fs/react-base)
 [![Dependency Status](https://david-dm.org/fs/react-base.svg?branch=master)](https://david-dm.org/fs/react-base)
