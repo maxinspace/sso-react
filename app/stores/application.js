@@ -1,6 +1,7 @@
 import Alt from 'altFlux';
 import { createStore } from 'alt-utils/lib/decorators';
 import ApplicationActions from 'actions/application';
+import GoogleAuthActions from 'actions/google_auth';
 
 @createStore(Alt)
 export default class ApplicationStore {
@@ -13,7 +14,8 @@ export default class ApplicationStore {
 
     this.bindListeners({
       openModal: ApplicationActions.OPEN_MODAL,
-      closeModal: ApplicationActions.CLOSE_MODAL
+      closeModal: ApplicationActions.CLOSE_MODAL,
+      handleGoogleAuth: GoogleAuthActions.CREATE
     });
   }
 
@@ -26,5 +28,9 @@ export default class ApplicationStore {
   closeModal() {
     this.isModalOpen = false;
     this.modalName = '';
+  }
+
+  handleGoogleAuth() {
+    this.closeModal();
   }
 }

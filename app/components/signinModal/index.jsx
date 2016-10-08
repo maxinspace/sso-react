@@ -12,6 +12,7 @@ import ApplicationActions from 'actions/application';
 import SigninActions from 'actions/signin';
 import ApplicationStore from 'stores/application';
 import SigninStore from 'stores/signin';
+import GoogleAuthLink from 'components/google_auth_link';
 
 @connectToStores
 export default class SigninModal extends Component {
@@ -67,6 +68,8 @@ export default class SigninModal extends Component {
         <Modal.Header closeButton>
           <h3 className="modal-title">Sign In</h3>
         </Modal.Header>
+
+        <GoogleAuthLink/>
 
         <form onSubmit={ this.signIn }>
           <Modal.Body>
