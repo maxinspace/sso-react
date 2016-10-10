@@ -11,6 +11,6 @@ export default class GoogleAuthActions {
           dispatch(result);
         });
       });
-    }
+    };
   }
 }

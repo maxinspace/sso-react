@@ -11,6 +11,7 @@ module.exports = Object.assign(
     appDir: 'app',
     distDir: 'dist',
     configDir: 'config',
+    apiTarget: process.env.API_TARGET,
     [process.env.NODE_ENV]: true
   }
 );

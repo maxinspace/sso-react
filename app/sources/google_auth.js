@@ -2,16 +2,18 @@ import config from 'config';
 import request from 'lib/request';
 
 export default class GoogleAuthSource {
+  static url = `${config.apiTarget}/users/auth/google_oauth2/callback`;
+
   static create(callback) {
     return this.authorize((response) => {
       delete response["g-oauth-window"];
 
       if (response && !response.error) {
-        let result = request("http://localhost:5000/v1/users/auth/google_oauth2/callback", {
+        const result = request(this.url, {
           method: 'POST',
           body: JSON.stringify(response)
         })
-        .then(result => result.json())
+        .then(result => result.json());
 
         callback(result);
       }
