@@ -6,7 +6,7 @@ export default class Home extends Component {
     return (
       <Grid>
         <Jumbotron>
-          <h1>React-base</h1>
+          <h1>React Oauth</h1>
           <p>
             Kick-start your new web application based on React and Flux technologies.
             <br/>

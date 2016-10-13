@@ -1,12 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import connectToStores from 'alt-utils/lib/connectToStores';
 import ApplicationStore from 'stores/application';
-import TodoModal from 'components/todoModal';
 import SigninModal from 'components/signinModal';
 import SignupModal from 'components/signupModal';
 
 const MODALS = {
-  todo: TodoModal,
   signIn: SigninModal,
   signUp: SignupModal
 };
