@@ -7,15 +7,14 @@ import { paths } from 'helpers/routes';
 export default class Header extends Component {
   render() {
     const links = [
-      { title: 'Home', route: paths.home() },
-      { title: 'About', route: paths.about() }
+      { title: 'Home', route: paths.home() }
     ];
 
     return (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            React-base
+            React Oauth
           </Navbar.Brand>
         </Navbar.Header>
         <NavigationLeft items={ links }/>

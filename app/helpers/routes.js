@@ -1,9 +1,7 @@
 import session from 'services/session';
 
 export const paths = {
-  home() { return '/'; },
-  about() { return '/about'; },
-  aboutExtended(id) { return `/about/extended/${id}`; }
+  home() { return '/'; }
 };
 
 export function requireAuth(nextState, replace) {
