@@ -6,6 +6,6 @@ describe('Footer', () => {
   const footerComponent = mount(<Footer/>);
 
   it('renders text', () => {
-    expect(footerComponent.find('p').text()).toEqual('React-base');
+    expect(footerComponent.find('p').text()).toEqual('React Oauth');
   });
 });

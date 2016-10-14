@@ -1,27 +1,35 @@
 import Alt from 'altFlux';
 import { createActions } from 'alt-utils/lib/decorators';
-import Storage from 'lib/storage';
-import sessionSource from 'sources/session';
+import SignoutSource from 'sources/signout';
 import config from 'config';
+import Storage from 'lib/storage';
+import appHistory from 'services/history';
+import { paths } from 'helpers/routes';
+import ApplicationActions from 'actions/application';
 
 const STORAGE_KEY = config.storageKey;
 
 @createActions(Alt)
 export default class SessionActions {
-  create(user) {
+  create(response) {
     return (dispatch) => {
-      sessionSource.create(user).then(result => {
-        Storage.set(STORAGE_KEY, result);
-        dispatch(result);
+      response.json().then(json => {
+        const { user } = json;
+
+        dispatch(user);
+
+        Storage.set(STORAGE_KEY, user);
+        ApplicationActions.closeModal();
+        appHistory.push(paths.profile());
       });
     };
   }
 
   delete(user) {
-    return (dispatch) => {
-      sessionSource.delete(user);
-      Storage.remove(STORAGE_KEY);
-      dispatch(user);
-    };
+    SignoutSource.perform(user);
+    Storage.remove(STORAGE_KEY);
+    appHistory.push(paths.home());
+
+    return user;
   }
 }

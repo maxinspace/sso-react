@@ -14,15 +14,15 @@ export default class NavigationRight extends Component {
     return session.store().getState();
   }
 
-  signIn() {
-    ApplicationActions.openModal({ name: 'signIn' });
+  signin() {
+    ApplicationActions.openModal({ name: 'signin' });
   }
 
-  signUp() {
-    ApplicationActions.openModal({ name: 'signUp' });
+  signup() {
+    ApplicationActions.openModal({ name: 'signup' });
   }
 
-  signOut() {
+  signout() {
     session.delete();
   }
 
@@ -30,7 +30,7 @@ export default class NavigationRight extends Component {
     if (session.loggedIn()) {
       return (
         <Nav pullRight>
-          <NavItem onClick={ this.signOut }>
+          <NavItem onClick={ this.signout }>
             Sign out
           </NavItem>
         </Nav>
@@ -39,10 +39,10 @@ export default class NavigationRight extends Component {
 
     return (
       <Nav pullRight>
-        <NavItem onClick={ this.signUp }>
+        <NavItem onClick={ this.signup }>
           Sign up
         </NavItem>
-        <NavItem onClick={ this.signIn }>
+        <NavItem onClick={ this.signin }>
           Sign in
         </NavItem>
       </Nav>

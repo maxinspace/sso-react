@@ -13,8 +13,6 @@ export default class SessionSource {
   }
 
   static delete(user) {
-    return request(`${this.urlRoot}/${user.id}`, {
-      method: 'DELETE'
-    });
+    return request(`${this.urlRoot}/${user.id}`, { method: 'DELETE' });
   }
 }

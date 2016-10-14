@@ -2,13 +2,9 @@ import config from 'config';
 import request from 'lib/request';
 
 export default class SignupSource {
-  static urlRoot = `${config.apiTarget}/users`;
+  static url = `${config.apiTarget}/v1/users/sign_up`;
 
   static create(user) {
-    return request(this.urlRoot, {
-      method: 'POST',
-      body: JSON.stringify(user)
-    })
-    .then(result => result.json());
+    return request(this.url, { method: 'POST', body: JSON.stringify(user) });
   }
 }

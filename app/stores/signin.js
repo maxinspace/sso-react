@@ -17,6 +17,7 @@ export default class SigninStore {
 
     this.bindListeners({
       setValue: SigninActions.SET_VALUE,
+      handleSigninFailed: SigninActions.SIGNIN_FAILED,
       reset: ApplicationActions.CLOSE_MODAL
     });
   }
@@ -27,5 +28,9 @@ export default class SigninStore {
 
   reset() {
     this.user = Object.assign({}, this.defaultProps);
+  }
+
+  handleSigninFailed(json) {
+    this.errorMessage = json.error.error;
   }
 }

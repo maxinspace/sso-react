@@ -3,6 +3,7 @@ import Header from 'components/header';
 import Modals from 'components/modals';
 import Footer from 'components/footer';
 import styles from './styles';
+import config from 'config';
 
 export default class Application extends Component {
   render() {

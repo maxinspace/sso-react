@@ -1,4 +1,7 @@
 @import "bootstrap";
+@import "fonts";
+@import "colors";
+@import "mixins";
 @import "base";
 @import "layout";
 @import "overrides";

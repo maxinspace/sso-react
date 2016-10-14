@@ -7,12 +7,11 @@ import {
   FormControl,
   ControlLabel
 } from 'react-bootstrap';
-import session from 'services/session';
 import ApplicationActions from 'actions/application';
-import SigninActions from 'actions/signin';
 import ApplicationStore from 'stores/application';
 import SigninStore from 'stores/signin';
-import GoogleAuthLink from 'components/google_auth_link';
+import GoogleAuthLink from 'components/googleAuthLink';
+import SigninActions from 'actions/signin';
 
 @connectToStores
 export default class SigninModal extends Component {
@@ -39,12 +38,11 @@ export default class SigninModal extends Component {
     SigninActions.setValue(event.target.name, event.target.value);
   }
 
-  signIn = (event) => {
+  signin = (event) => {
     event.preventDefault();
 
     if (this.isValid()) {
-      session.create(this.props.user);
-      ApplicationActions.closeModal();
+      SigninActions.perform(this.props.user);
     }
   }
 
@@ -69,9 +67,9 @@ export default class SigninModal extends Component {
           <h3 className="modal-title">Sign In</h3>
         </Modal.Header>
 
-        <GoogleAuthLink/>
+        <GoogleAuthLink connected={ false } userAuthenticated={ false }/>
 
-        <form onSubmit={ this.signIn }>
+        <form onSubmit={ this.signin }>
           <Modal.Body>
             <FormGroup
               controlId="email"
@@ -79,7 +77,7 @@ export default class SigninModal extends Component {
             >
               <ControlLabel>Email</ControlLabel>
               <FormControl
-                type="text"
+                type="email"
                 name="email"
                 onChange={ this.setValue }
               />

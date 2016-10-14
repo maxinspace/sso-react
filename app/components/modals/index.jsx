@@ -5,8 +5,8 @@ import SigninModal from 'components/signinModal';
 import SignupModal from 'components/signupModal';
 
 const MODALS = {
-  signIn: SigninModal,
-  signUp: SignupModal
+  signin: SigninModal,
+  signup: SignupModal
 };
 
 @connectToStores

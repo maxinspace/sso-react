@@ -1,6 +1,6 @@
 import Alt from 'altFlux';
 import { createStore } from 'alt-utils/lib/decorators';
-import GoogleAuthActions from 'actions/google_auth';
+import GoogleAuthActions from 'actions/googleAuth';
 
 @createStore(Alt)
 export default class GoogleAuthStore {

@@ -1,16 +1,11 @@
-:root {
-  font-size: 16px;
-}
-
-.google_oauth2 {
+.google {
   @mixin socicon;
 
   &::before {
     content: "c";
   }
 
-  &:hover,
-  &--connected {
+  &:hover {
     color: #ff765f;
   }
 }
