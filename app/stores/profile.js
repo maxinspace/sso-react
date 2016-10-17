@@ -14,7 +14,7 @@ export default class ProfileStore {
       saveProfile: [ProfileActions.LOADED, ProfileActions.UPDATED],
       reset: [ProfileActions.RESET, ProfileActions.LOAD_FAILED],
       setValue: ProfileActions.SET_VALUE,
-      handleUpdateFailed: ProfileActions.UPDATE_FAILED
+      handleUpdateFailed: ProfileActions.NOT_UPDATED
     });
   }
 

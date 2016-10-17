@@ -19,11 +19,7 @@ export default class ProfileActions {
 
   loaded(response) {
     return (dispatch) => {
-      response.json().then(json => {
-        if (!json.user.password_set_by_user) { ApplicationActions.openModal({ name: 'password' }); }
-
-        dispatch(json);
-      });
+      response.json().then(json => { dispatch(json); });
     };
   }
 

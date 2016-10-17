@@ -16,9 +16,9 @@ export default class GoogleAuthSource {
   }
 
   static connect(callback) {
-    return this._googleAuthenticate((authorizeResponse) => {
-      delete authorizeResponse["g-oauth-window"];
-      const response = this._authFromBackend(authorizeResponse);
+    return this._googleAuthenticate((authenticateResponse) => {
+      delete authenticateResponse["g-oauth-window"];
+      const response = this._authFromBackend(authenticateResponse);
 
       callback(response);
     });
